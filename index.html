@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechBear</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <!-- favicon -->
+    <link rel="icon" type="image/png" href="images/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="MyWebSite" />
+    <link rel="manifest" href="images/favicon/site.webmanifest" />
+</head>
+<body>
+    <header class="sticky-header">
+        <div class="header-container">
+            <div class="logo">TechBear</div>
+            <nav>
+                <a href="#">Дом</a>
+                <a href="#">О нас</a>
+                <a href="#">Новости</a>
+                <div class="dropdown">
+                    <a href="#">Курсы &#9662;</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Математика</a>
+                        <a href="#">Русский</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Для учителей &#9662;</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Документ 1</a>
+                        <a href="#">Документ 2</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Для ученика &#9662;</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Математика</a>
+                        <a href="#">Русский</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Репетиторство &#9662;</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Математика</a>
+                        <a href="#">Русский</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a href="#">Уроки &#9662;</a>
+                    <div class="dropdown-menu">
+                        <a href="#">Математика</a>
+                        <a href="#">Русский</a>
+                    </div>
+                </div>
+                <a href="#">Опубликовать материал</a>
+            </nav>
+
+
+        <!-- Вход / Регистрация -->
+        <div class="container">
+            <button id="openLogin" class="btn">Вход</button>
+            <button id="openRegister" class="btn">Регистрация</button>
+        </div>
+    </div>
+</header>
+
+<!-- Модальное окно входа -->
+<div id="loginModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Вход</h2>
+        <form action="save_user.php" method="post">
+            <input type="text" name="username" placeholder="Имя пользователя, почта или телефон" required>
+            <input type="password" name="password" placeholder="Пароль" required>
+            <button type="submit" class="btn">Войти</button>
+        </form>
+    </div>
+</div>
+
+<!-- Модальное окно регистрации -->
+<div id="registerModal" class="modal hidden">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2>Регистрация</h2>
+        <form action="save_user.php" method="post">
+            <input type="text" name="first_name" placeholder="Имя" required>
+            <input type="text" name="last_name" placeholder="Фамилия" required>
+            <input type="email" name="email" placeholder="Почта" required>
+            <input type="text" name="phone" placeholder="Телефон">
+            <input type="password" name="password" placeholder="Пароль" required>
+            <input type="password" name="confirm_password" placeholder="Подтвердите пароль" required>
+            <button type="submit" class="btn">Зарегистрироваться</button>
+        </form>
+    </div>
+</div>
+
+<main class="container">
+    <div class="container">
+        <!-- Первый пункт: TechBear — образовательная платформа -->
+        <section class="section highlight-section">
+            <div class="highlight-text">
+                <h1>TechBear — образовательная онлайн-платформа</h1>
+                <p><strong>№1 по популярности</strong></p>
+                <p>по итогам анализа 31 млрд сообщений в русскоязычных соцмедиа в 2022-2023 годах компанией Brand Analytics</p>
+            </div>
+            <img src="images/onepnk.png" alt="Топ-10 образовательных платформ">
+        </section>
+
+
+    <!-- Преимущества обучения -->
+    <section class="section highlight-benefits">
+        <div class="benefits-container">
+            <div class="benefits-text">
+                <h2>Преимущества обучения<br>в учебном центре «TechBear»</h2>
+                <ul>
+                    <li><strong>Возможность ускоренного обучения:</strong> длительность курсов от 2 недель</li>
+                    <li><strong>Совмещение учёбы и работы:</strong> обучение проходит в дистанционном режиме</li>
+                    <li><strong>Нам можно доверять:</strong> за 8 лет мы обучили 1 287 453 человек из 85 регионов</li>
+                    <li><strong>Невероятно низкая стоимость обучения</strong> при высоком качестве учебных программ</li>
+                </ul>
+            </div>
+            <div class="benefits-right">
+                <div class="info-box">
+                    <p><strong>Оригиналы документов</strong> высылаются Почтой России</p>
+                </div>
+                <div class="info-box">
+                    <p><strong>Итоговая аттестация</strong> в дистанционном режиме</p>
+                </div>
+                <div class="info-box">
+                    <p><strong>Новые учебные группы</strong> формируются каждый день</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Престижные документы -->
+    <section class="section prestigious-documents">
+        <div class="documents-container">
+            <div class="documents-text">
+                <h2>Престижные документы<br>о профессиональной переподготовке и повышении квалификации</h2>
+                <ul>
+                    <li><strong>Документы признаются аттестационными комиссиями</strong> во всех регионах РФ</li>
+                    <li><strong>5224 курса</strong> повышения квалификации и профессиональной переподготовки</li>
+                    <li><strong>Накопительная система скидок</strong> для учителей и образовательных учреждений</li>
+                </ul>
+                <button class="btn btn-green">Выбрать подходящий курс</button>
+            </div>
+            <div class="documents-carousel">
+                <img src="images/treepnk.png" alt="Образец документа">
+                <!-- Можно добавить дополнительные изображения, если потребуется слайдер -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Результаты обучающихся -->
+    <section class="section results">
+        <div class="container">
+            <h2 class="section-title">Результаты обучающихся на TechBear</h2>
+    
+            <div class="results-content">
+                <!-- Левый блок с текстом -->
+                <div class="results-text">
+                    <ul>
+                        <li>
+                            <span class="result-label">Остались довольны курсом</span>
+                        </li>
+                        <li>
+                            <span class="result-label">Готовы рекомендовать курсы коллегам</span>
+                        </li>
+                        <li>
+                            <span class="result-label">Считают цену курса доступной</span>
+                        </li>
+                    </ul>
+                </div>
+    
+                <!-- Правый блок с круговой анимацией -->
+                <div class="results-charts">
+                    <!-- Круг 1 -->
+                    <div class="chart">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle
+                                class="progress-ring__circle"
+                                stroke="#007BFF"
+                                stroke-width="10"
+                                fill="transparent"
+                                r="50"
+                                cx="60"
+                                cy="60"
+                                data-percent="98.4"
+                            ></circle>
+                        </svg>
+                        <div class="chart-label">98,4%</div>
+                    </div>
+    
+                    <!-- Круг 2 -->
+                    <div class="chart">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle
+                                class="progress-ring__circle"
+                                stroke="#28a745"
+                                stroke-width="10"
+                                fill="transparent"
+                                r="50"
+                                cx="60"
+                                cy="60"
+                                data-percent="98.8"
+                            ></circle>
+                        </svg>
+                        <div class="chart-label">98,8%</div>
+                    </div>
+    
+                    <!-- Круг 3 -->
+                    <div class="chart">
+                        <svg class="progress-ring" width="120" height="120">
+                            <circle
+                                class="progress-ring__circle"
+                                stroke="#ffc107"
+                                stroke-width="10"
+                                fill="transparent"
+                                r="50"
+                                cx="60"
+                                cy="60"
+                                data-percent="98.1"
+                            ></circle>
+                        </svg>
+                        <div class="chart-label">98,1%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Отзывы -->
+    <section class="section reviews">
+        <h2>Отзывы слушателей курсов</h2>
+        <div class="reviews-container">
+            <div class="review-card">
+                <p class="review-text">"Прошёл курс повышения квалификации. Всё было понятно, доступно и удобно. Рекомендую!"</p>
+                <div class="review-footer">
+                    <span class="review-author">— Иван Петров</span>
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <p class="review-text">"Отличный материал и поддержка от преподавателей. Курсы помогли в работе."</p>
+                <div class="review-footer">
+                    <span class="review-author">— Ольга Смирнова</span>
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+            <div class="review-card">
+                <p class="review-text">"Получил массу полезных знаний, которые уже применяю. Благодарю за качественное обучение!"</p>
+                <div class="review-footer">
+                    <span class="review-author">— Алексей Сидоров</span>
+                    <div class="review-stars">
+                        ★★★★★
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+            </div>
+            <ul class="footer-menu">
+                <li><a href="#">Вернуться в начало</a></li>
+            </ul>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>© 2025 TechBear. Все права защищены.</p>
+            <p>Разработано с ❤️ Харченок Ильей, мастером кодинга.</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
