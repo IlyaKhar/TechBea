@@ -1,4 +1,31 @@
 // script.js
+// Переключение выпадающего меню для мобильных устройств
+document.querySelectorAll('.dropdown > a').forEach(menu => {
+    menu.addEventListener('click', (event) => {
+        event.preventDefault(); // Отключаем переход по ссылке
+        const dropdownMenu = menu.nextElementSibling;
+        const isOpen = dropdownMenu.style.display === 'block';
+
+        // Закрыть все открытые меню
+        document.querySelectorAll('.dropdown-menu').forEach(menu => {
+            menu.style.display = 'none';
+        });
+
+        // Показать или скрыть текущее меню
+        dropdownMenu.style.display = isOpen ? 'none' : 'block';
+    });
+});
+
+// Закрытие модального окна при изменении размеров экрана
+window.addEventListener('resize', () => {
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+
+    if (window.innerWidth > 768) {
+        loginModal.classList.remove('show');
+        registerModal.classList.remove('show');
+    }
+});
 // Получаем элементы
 const openLoginBtn = document.getElementById("openLogin");
 const openRegisterBtn = document.getElementById("openRegister");
