@@ -8,6 +8,7 @@ body {
   background: #f8f9fa; /* Светлый фон */
   color: #333; /* Темный текст */
   line-height: 1.6;
+  font-size: 16px;
   
 }
 
@@ -15,6 +16,8 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  flex-direction: column;
+  gap: 5px;
 }
 
 
@@ -705,19 +708,95 @@ nav a:hover {
   margin: 5px 0; /* Небольшие отступы между строками */
 }
 
-/* Адаптивность */
+/* Адаптация для экранов до 768px */
 @media (max-width: 768px) {
-  .footer-top {
+  header {
+      padding: 10px;
+  }
+
+  nav {
+      display: block;
+  }
+
+  nav a, .dropdown > a {
+      display: block;
+      margin-bottom: 10px;
+  }
+
+  .dropdown-menu {
+      position: static;
+      display: none; /* Скрыть меню по умолчанию */
+      background: none;
+      box-shadow: none;
+      padding: 0;
+  }
+
+  .dropdown:hover .dropdown-menu {
+      display: block;
+  }
+
+  .modal-content {
+      width: 90%;
+  }
+
+  .benefits-container {
+      flex-direction: column;
+  }
+
+  .documents-container, .results-content {
       flex-direction: column;
       align-items: center;
   }
 
-  .footer-menu {
-      flex-direction: column; /* Выравнивание пунктов меню по вертикали */
-      align-items: center;
+  .results-text, .results-charts {
+      width: 100%;
+  }
+
+  .reviews-container {
+      flex-direction: column;
+      gap: 20px;
   }
 }
 
+/* Общие настройки для мобильных устройств */
+
+
+header {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Адаптация для экранов до 480px */
+@media (max-width: 480px) {
+  .btn {
+      font-size: 0.9rem;
+      padding: 8px 12px;
+  }
+
+  h1, h2, h3 {
+      font-size: 1.5rem;
+  }
+
+  ul {
+      padding: 0;
+      list-style: none;
+  }
+
+  .review-card {
+      padding: 10px;
+  }
+
+  .footer {
+      text-align: center;
+  }
+}
 
 
 /* анимации для секций */
