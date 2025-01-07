@@ -26,6 +26,20 @@ window.addEventListener('resize', () => {
         registerModal.classList.remove('show');
     }
 });
+
+
+
+// Элементы для бургер-меню
+const burgerMenu = document.getElementById('burgerMenu');
+const navMenu = document.getElementById('navMenu');
+
+// Переключение видимости меню
+burgerMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('mobile-visible');
+    navMenu.classList.toggle('mobile-hidden');
+});
+
+
 // Получаем элементы
 const openLoginBtn = document.getElementById("openLogin");
 const openRegisterBtn = document.getElementById("openRegister");
