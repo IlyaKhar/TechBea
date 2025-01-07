@@ -1,0 +1,58 @@
+/* Responsive.css */
+
+/* Стили бургер-меню */
+.burger-menu {
+    display: none; /* Скрыто на больших экранах */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.burger-menu span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Скрытие меню по умолчанию */
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-menu.mobile-hidden {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.nav-menu.mobile-hidden a {
+    color: white;
+    padding: 10px 0;
+}
+
+/* Появление меню */
+.nav-menu.mobile-visible {
+    display: flex;
+}
+
+/* Показываем бургер-меню на маленьких экранах */
+@media (max-width: 768px) {
+    .burger-menu {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none; /* Прячем обычное меню */
+    }
+}
