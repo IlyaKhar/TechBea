@@ -13,6 +13,14 @@ body {
 }
 
 .container {
+  display: flex;
+  justify-content: flex-end; /* Сдвиг кнопок к правому краю */
+  align-items: center; /* Центровка по вертикали */
+  gap: 10px; /* Расстояние между кнопками */
+  margin-left: auto; /* Убедимся, что контейнер уходит вправо */
+}
+
+.container1 {
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
@@ -20,45 +28,56 @@ body {
   gap: 5px;
 }
 
-
 .sticky-header {
+  display: flex;
+  justify-content: space-between; /* Пространство между основными элементами */
+  align-items: center; /* Центровка по вертикали */
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #ff7e5f, #feb47b);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  padding: 10px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
 }
+
 
 .header-container {
   display: flex;
-  align-items: center;
+  justify-content: space-between; /* Логотип слева, меню по центру, кнопки справа */
+  align-items: center; /* Центровка по вертикали */
   width: 100%;
 }
 
 .logo {
-  font-size: 24px;
+  font-size: 1.8rem;
   font-weight: bold;
   color: white;
-  margin-right: 20px;
+}
+
+nav {
+  display: flex;
+  gap: 20px; /* Расстояние между пунктами */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center; /* Центровка по вертикали */
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin: 0 10px;
-  padding: 5px 10px;
-  transition: background 0.3s;
+  font-size: 1rem;
+  padding: 10px 15px; /* Равномерные отступы для выравнивания высоты */
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 nav a:hover {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 5px;
+  color: #ffd1a4;
 }
 
 .dropdown {
@@ -67,16 +86,18 @@ nav a:hover {
 }
 
 .dropdown-menu {
-  display: none;
   position: absolute;
+  display: none;
+  top: 100%;
+  left: 0;
   background: white;
   color: #333;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 10px 0;
-  min-width: 150px;
   border-radius: 5px;
+  padding: 10px 0;
   z-index: 999;
 }
+
 
 .dropdown:hover .dropdown-menu {
   display: block;
@@ -85,9 +106,10 @@ nav a:hover {
 .dropdown-menu a {
   display: block;
   padding: 8px 15px;
+  font-size: 0.9rem;
   color: #333;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
 .dropdown-menu a:hover {
@@ -708,99 +730,7 @@ nav a:hover {
   margin: 5px 0; /* Небольшие отступы между строками */
 }
 
-/* Адаптация для экранов до 768px */
-@media (max-width: 768px) {
-  header {
-      padding: 10px;
-  }
-
-  nav {
-      display: block;
-  }
-
-  nav a, .dropdown > a {
-      display: block;
-      margin-bottom: 10px;
-  }
-
-  .dropdown-menu {
-      position: static;
-      display: none; /* Скрыть меню по умолчанию */
-      background: none;
-      box-shadow: none;
-      padding: 0;
-  }
-
-  .dropdown:hover .dropdown-menu {
-      display: block;
-  }
-
-  .modal-content {
-      width: 90%;
-  }
-
-  .benefits-container {
-      flex-direction: column;
-  }
-
-  .documents-container, .results-content {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  .results-text, .results-charts {
-      width: 100%;
-  }
-
-  .reviews-container {
-      flex-direction: column;
-      gap: 20px;
-  }
-}
-
-/* Общие настройки для мобильных устройств */
-
-
-header {
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 10px;
-}
-
-nav {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-/* Адаптация для экранов до 480px */
-@media (max-width: 480px) {
-  .btn {
-      font-size: 0.9rem;
-      padding: 8px 12px;
-  }
-
-  h1, h2, h3 {
-      font-size: 1.5rem;
-  }
-
-  ul {
-      padding: 0;
-      list-style: none;
-  }
-
-  .review-card {
-      padding: 10px;
-  }
-
-  .footer {
-      text-align: center;
-  }
-}
-
-
 /* анимации для секций */
-
 
 .section.visible {
   opacity: 1;

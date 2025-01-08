@@ -56,3 +56,250 @@
         display: none; /* Прячем обычное меню */
     }
 }
+
+/* --- Основная страница: Общие стили --- */
+.section {
+    padding: 40px;
+    margin: 20px 0;
+}
+
+.section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* --- Адаптация для 1200px --- */
+@media (max-width: 1200px) {
+    .container {
+        max-width: 1000px;
+    }
+
+    .highlight-section img {
+        max-width: 50%;
+    }
+
+    .highlight-text {
+        padding: 10px;
+    }
+}
+
+/* --- Адаптация для 992px --- */
+@media (max-width: 992px) {
+    .container {
+        max-width: 750px;
+    }
+
+    .highlight-section {
+        flex-wrap: wrap;
+    }
+
+    .highlight-section img {
+        max-width: 70%;
+        margin: 10px auto;
+    }
+
+    .highlight-text {
+        text-align: center;
+    }
+
+    .benefits-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .documents-container {
+        flex-wrap: wrap;
+    }
+
+    .documents-carousel img {
+        max-width: 100%;
+        margin-top: 20px;
+    }
+}
+
+/* --- Адаптация для 768px --- */
+@media (max-width: 768px) {
+    .container {
+        max-width: 500px;
+        padding: 0 15px;
+    }
+
+    .highlight-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .highlight-section img {
+        max-width: 100%;
+        margin: 20px auto;
+    }
+
+    .highlight-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .benefits-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .documents-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .results-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .chart {
+        width: 80px;
+        height: 80px;
+    }
+
+    .chart-label {
+        font-size: 1rem;
+    }
+}
+
+/* --- Адаптация для 480px --- */
+@media (max-width: 480px) {
+    .highlight-section {
+        padding: 10px;
+    }
+
+    .highlight-text h1 {
+        font-size: 1.2rem;
+    }
+
+    .highlight-section img {
+        max-width: 100%;
+        margin: 10px 0;
+    }
+
+    .benefits-text ul {
+        font-size: 0.9rem;
+    }
+
+    .results-content {
+        gap: 10px;
+    }
+
+    .chart-label {
+        font-size: 0.8rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 5px 10px;
+    }
+
+    .review-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* --- Адаптация для 320px --- */
+@media (max-width: 320px) {
+    body {
+        font-size: 12px;
+    }
+
+    .highlight-text h1 {
+        font-size: 1rem;
+    }
+
+    .highlight-section img {
+        max-width: 100%;
+        margin: 5px 0;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+        padding: 5px;
+    }
+
+    .chart-label {
+        font-size: 0.7rem;
+    }
+
+    .review-card {
+        font-size: 0.8rem;
+        padding: 10px;
+    }
+}
+
+/* --- Адаптация header для экранов больше 768px --- */
+@media (min-width: 769px) {
+    .sticky-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 30px;
+        background: linear-gradient(90deg, #ff7e5f, #feb47b);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+}
+
+
+
+    /* Dropdown меню */
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        display: none;
+        top: 100%;
+        left: 0;
+        background: white;
+        color: #333;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 10px 0;
+        z-index: 10;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+        color: #333;
+        text-decoration: none;
+        transition: background 0.3s ease;
+    }
+
+    .dropdown-menu a:hover {
+        background: #ff7e5f;
+        color: white;
+    }
+
+    /* Кнопки входа и регистрации */
+    .container {
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        background: white;
+        color: #ff7e5f;
+        border: none;
+        padding: 8px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+        background: rgba(255, 255, 255, 0.8);
+    }
