@@ -29,16 +29,55 @@ window.addEventListener('resize', () => {
 
 
 
-// Элементы для бургер-меню
-const burgerMenu = document.getElementById('burgerMenu');
-const navMenu = document.getElementById('navMenu');
 
-// Переключение видимости меню
-burgerMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('mobile-visible');
-    navMenu.classList.toggle('mobile-hidden');
+
+// Элементы для бургер-меню
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navMenu = document.getElementById("navMenu");
+
+    // Переключение видимости меню
+    burgerMenu.addEventListener("click", () => {
+        navMenu.classList.toggle("mobile-hidden");
+        navMenu.classList.toggle("mobile-visible");
+    });
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navMenu = document.getElementById("navMenu");
+
+    burgerMenu.addEventListener("click", () => {
+        navMenu.classList.toggle("mobile-visible");
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navMenu = document.getElementById("navMenu");
+
+    burgerMenu.addEventListener("click", () => {
+        navMenu.classList.toggle("mobile-visible");
+    });
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const burgerMenu = document.getElementById("burgerMenu");
+        const navMenu = document.getElementById("navMenu");
+    
+        burgerMenu.addEventListener("click", () => {
+            burgerMenu.classList.toggle("active"); // Анимация бургер-меню
+            navMenu.classList.toggle("mobile-visible"); // Появление меню
+        });
+    });
+
+    // Закрытие меню при клике вне его области
+    document.addEventListener("click", (event) => {
+        if (!navMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
+            navMenu.classList.remove("mobile-visible");
+        }
+    });
+});
 
 // Получаем элементы
 const openLoginBtn = document.getElementById("openLogin");
