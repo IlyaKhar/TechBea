@@ -4,24 +4,29 @@
 .burger-menu {
     display: none; /* Скрыто на больших экранах */
     flex-direction: column;
-    gap: 5px;
+    gap: 4px;
     cursor: pointer;
     z-index: 1001;
 }
 
 .burger-menu span {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 17px;
+    height: 2px;
     background-color: white;
-    border-radius: 3px;
+    border-radius: 2px;
     transition: all 0.3s ease;
+}
+
+/* Для активации бургер-меню */
+.burger-menu.active + .nav-menu {
+    display: flex;
 }
 
 /* Скрытие меню по умолчанию */
 .nav-menu {
-    display: flex;
-    gap: 15px;
+    display: none;
+
 }
 
 .nav-menu.mobile-hidden {
@@ -43,7 +48,32 @@
 
 /* Появление меню */
 .nav-menu.mobile-visible {
-    display: flex;
+    display: flex; /* Показываем меню */
+    flex-direction: column; /* Элементы меню в колонку */
+    justify-content: center; /* Центровка по вертикали */
+    align-items: center; /* Центровка по горизонтали */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 25%; /* Середина экрана */
+    left: 50%; /* Середина экрана */
+    transform: translate(-50%, -50%); /* Сдвиг в центр */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Полупрозрачный тёмный фон */
+    color: white;; /* Цвет текста */
+    padding: 20px;
+    border-radius: 10px; /* Скруглённые углы */
+    border-color: #333;
+    z-index: 1000; /* Поверх других элементов */
+    gap: 15px; /* Расстояние между пунктами меню */
+    opacity: 1; /* Полностью видимое */
+}
+
+/* Настройка ссылок внутри меню */
+.nav-menu.mobile-visible a {
+    color: white;; /* Белый текст */
+    text-decoration: none; /* Убираем подчеркивание */
+}
+
+.nav-menu.mobile-visible a:hover {
+    color: white; /* Цвет текста при наведении */
 }
 
 /* Показываем бургер-меню на маленьких экранах */
@@ -81,6 +111,15 @@
     .highlight-text {
         padding: 10px;
     }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        font-size: 0.8rem;
+        padding: 6px 2px;
+    }
 }
 
 /* --- Адаптация для 992px --- */
@@ -115,7 +154,37 @@
         max-width: 100%;
         margin-top: 20px;
     }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+        padding: 6px 2px;
+    }
+
+        .container {
+        gap: 5px; /* Уменьшаем расстояние между кнопками */
+    }
+
+    .nav-menu {
+        flex-wrap: wrap; /* Разрешаем перенос пунктов меню */
+        justify-content: center; /* Центровка меню */
+        gap: 5px; /* Расстояние между пунктами */
+        position: static; /* Убираем абсолютное позиционирование */
+        transform: none; /* Сбрасываем смещение */
+        display: none; /* Скрываем центральное меню */
+    }
+
+    .burger-menu {
+        display: flex; /* Показываем бургер-меню */
+        margin-left: auto; /* Двигаем бургер к правому краю */
+    }
+
 }
+
+
 
 /* --- Адаптация для 768px --- */
 @media (max-width: 768px) {
@@ -161,6 +230,19 @@
     .chart-label {
         font-size: 1rem;
     }
+
+    .logo {
+        font-size: 1rem;
+    }
+
+    .btn {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+    }
+
+    .burger-menu {
+        margin-left: auto; /* Двигаем бургер к правому краю */
+    }
 }
 
 /* --- Адаптация для 480px --- */
@@ -191,15 +273,112 @@
     }
 
     .btn {
-        font-size: 0.8rem;
-        padding: 5px 10px;
+        font-size: 0.6rem;
+        padding: 2px 6px;
     }
 
     .review-card {
         width: 90%;
         margin: 10px auto;
     }
+
+    .logo {
+        font-size: 0.8rem;
+    }
 }
+
+
+/* --- Адаптация для 380px --- */
+@media (max-width: 380px) {
+    .container1 {
+        padding: 0 10px; /* Уменьшаем боковые отступы */
+    }
+
+    .header-container {
+        flex-wrap: wrap; /* Разрешаем перенос элементов */
+        justify-content: space-between; /* Логотип слева, меню справа */
+    }
+
+    .btn {
+        font-size: 0.6rem;
+        padding: 6px 8px;
+    }
+
+    .logo {
+        font-size: 0.8rem; /* Уменьшаем размер логотипа */
+    }
+
+    .nav-menu a {
+        font-size: 0.8rem; /* Уменьшаем пункты меню */
+        padding: 8px; /* Уменьшаем внутренние отступы */
+    }
+
+    .burger-menu {
+        margin-left: auto; /* Двигаем бургер к правому краю */
+    }
+
+    .nav-menu.mobile-visible {
+        right: 0; /* Убедитесь, что меню не выходит за правый край */
+        left: auto;
+    }
+
+    .section, .container1 {
+        padding: 10px; /* Уменьшаем отступы */
+    }
+
+    img {
+        max-width: 100%; /* Делаем изображение адаптивным */
+        height: auto;
+    }
+
+    .highlight-section {
+        flex-direction: column; /* Ставим элементы в колонку */
+        text-align: center;
+    }
+
+    .highlight-section img {
+        width: 100%; /* Заполняет ширину экрана */
+    }
+
+    .highlight-text h1 {
+        font-size: 1rem; /* Уменьшаем текст */
+    }
+
+    .benefits-container {
+        flex-direction: column; /* Ставим элементы в колонку */
+        text-align: center; /* Центровка текста */
+    }
+
+    .benefits-text h2 {
+        font-size: 1rem; /* Уменьшаем текст */
+    }
+
+    .info-box {
+        padding: 10px; /* Уменьшаем внутренние отступы */
+    }
+
+    .results-content {
+        flex-direction: column; /* Элементы в колонку */
+        align-items: center; /* Центровка */
+    }
+
+    .chart-label {
+        font-size: 0.8rem; /* Уменьшаем текст в графиках */
+    }
+
+    .section, .highlight-section, .benefits-container, .results-content {
+        padding: 0 10px; /* Уменьшаем боковые отступы */
+    }
+
+    h1, h2, h3 {
+        font-size: 1rem; /* Уменьшаем заголовки */
+    }
+
+    p {
+        font-size: 0.9rem; /* Уменьшаем текст */
+    }
+}
+
 
 /* --- Адаптация для 320px --- */
 @media (max-width: 320px) {
@@ -217,8 +396,8 @@
     }
 
     .btn {
-        font-size: 0.7rem;
-        padding: 5px;
+        font-size: 0.5rem;
+        padding: 6px 8px;
     }
 
     .chart-label {
@@ -229,6 +408,11 @@
         font-size: 0.8rem;
         padding: 10px;
     }
+
+    .logo {
+        font-size: 0.7rem;
+    }
+
 }
 
 /* --- Адаптация header для экранов больше 768px --- */
@@ -241,9 +425,7 @@
         background: linear-gradient(90deg, #ff7e5f, #feb47b);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
-
 }
-
 
 
     /* Dropdown меню */
@@ -264,9 +446,23 @@
         z-index: 10;
     }
 
-    .dropdown:hover .dropdown-menu {
-        display: block;
-    }
+    /* По умолчанию меню скрыто 
+.dropdown-menu {
+    display: none;
+    opacity: 0; /* Начальная прозрачность */
+
+    /*    transform: translateY(-10px); /* Смещение вверх */
+
+    /*    transition: opacity 0.3s ease, transform 0.3s ease; /* Анимация появления */
+/* } */
+
+
+    /* Показываем меню при наведении */
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1; /* Полностью видимое */
+    transform: translateY(0); /* Сбрасываем смещение */
+}
 
     .dropdown-menu a {
         display: block;
@@ -285,21 +481,34 @@
     /* Кнопки входа и регистрации */
     .container {
         display: flex;
-        gap: 10px;
+        gap: 5px;
         justify-content: flex-end;
     }
 
-    .btn {
-        font-size: 0.9rem;
-        background: white;
-        color: #ff7e5f;
-        border: none;
-        padding: 8px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background 0.3s ease;
-    }
+.section, .highlight-section, .benefits-container, .results-content {
+    max-width: 100%; /* Ограничиваем ширину секций */
+    overflow: hidden; /* Прячем элементы, выходящие за пределы */
+    box-sizing: border-box; /* Учитываем отступы в ширине */
+}
 
-    .btn:hover {
-        background: rgba(255, 255, 255, 0.8);
-    }
+/* Цвет текста в пункте "Администрация" при наведении */
+.nav-menu .dropdown-menu a:hover {
+    color: #ff7e5f; /* Новый цвет текста при наведении */
+    background-color: rgba(255, 255, 255, 0.1); /* Фон при наведении */
+    transition: all 0.3s ease; /* Плавный переход цвета */
+}
+
+/* Анимация при активации */
+.burger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px); /* Верхняя линия становится наклонной */
+    background-color: #ff7e5f; /* Меняем цвет */
+}
+
+.burger-menu.active span:nth-child(2) {
+    opacity: 0; /* Прячем среднюю линию */
+}
+
+.burger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px); /* Нижняя линия становится наклонной */
+    background-color: #ff7e5f; /* Меняем цвет */
+}

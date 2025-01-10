@@ -9,7 +9,8 @@ body {
   color: #333; /* Темный текст */
   line-height: 1.6;
   font-size: 16px;
-  
+      width: 100%;
+    overflow-x: hidden; /* Убираем горизонтальный скролл */
 }
 
 .container {
@@ -32,9 +33,9 @@ body {
   display: flex;
   justify-content: space-between; /* Пространство между основными элементами */
   align-items: center; /* Центровка по вертикали */
-  padding: 15px 30px;
+  padding: 10px 20px;
   background: linear-gradient(90deg, #ff7e5f, #feb47b);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -759,6 +760,44 @@ nav a:hover {
 .dot.active {
   background: #007BFF;
 }
+
+
+.container1, .section, .highlight-section, .benefits-container, .results-content {
+  box-sizing: border-box; /* Учитываем отступы и границы */
+}
+
+img, video, iframe {
+  max-width: 100%; /* Изображения и мультимедиа не выходят за границы */
+  height: auto; /* Сохраняем пропорции */
+}
+
+table {
+  width: 100%; /* Таблицы занимают всю доступную ширину */
+  word-wrap: break-word; /* Перенос текста внутри таблиц */
+}
+
+
+.highlight-text {
+  word-wrap: break-word; /* Перенос длинного текста */
+  padding: 0 10px; /* Уменьшаем отступы текста */
+}
+
+.results-content {
+  display: flex;
+  flex-wrap: wrap; /* Разрешаем перенос элементов */
+  justify-content: center; /* Центровка контента */
+  gap: 15px; /* Расстояние между блоками */
+}
+
+.chart {
+  max-width: 80px; /* Уменьшаем размер графиков */
+  height: auto;
+}
+
+.results-text ul {
+  padding: 0 10px; /* Уменьшаем отступы текста */
+}
+
 
 @keyframes fadeIn {
   from {
