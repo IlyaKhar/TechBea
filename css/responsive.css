@@ -69,8 +69,10 @@
 
 /* Настройка ссылок внутри меню */
 .nav-menu.mobile-visible a {
-    color: white;; /* Белый текст */
+    color: white; /* Белый текст */
     text-decoration: none; /* Убираем подчеркивание */
+    padding: 5px;
+    transition: all 0.3s ease;
 }
 
 .nav-menu.mobile-visible a:hover {
@@ -367,7 +369,7 @@
         font-size: 0.8rem; /* Уменьшаем текст в графиках */
     }
 
-    .section, .highlight-section, .benefits-container, .results-content {
+    .section, .highlight-section, .benefits-container, .results-content{
         padding: 0 10px; /* Уменьшаем боковые отступы */
     }
 
