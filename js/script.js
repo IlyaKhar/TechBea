@@ -70,29 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const burgerMenu = document.getElementById("burgerMenu");
-    const navMenu = document.getElementById("navMenu");
 
-    // Показ меню при наведении на бургер
-    burgerMenu.addEventListener("mouseenter", () => {
-        navMenu.style.display = "flex";
-        navMenu.style.opacity = "1";
-        navMenu.style.transform = "translateY(0)";
-    });
-
-    // Скрытие меню при убирании мыши с бургер-меню и навигации
-    burgerMenu.addEventListener("mouseleave", () => {
-        setTimeout(() => {
-            if (!navMenu.matches(":hover")) {
-                navMenu.style.display = "none";
-                navMenu.style.opacity = "0";
-                navMenu.style.transform = "translateY(-20px)";
-            }
-        }, 300); // Небольшая задержка для предотвращения мерцания
-    });
-
-});
 
 // Получаем элементы
 const openLoginBtn = document.getElementById("openLogin");
