@@ -1,4 +1,6 @@
 // script.js
+
+
 // Переключение выпадающего меню для мобильных устройств
 document.querySelectorAll('.dropdown > a').forEach(menu => {
     menu.addEventListener('click', (event) => {
@@ -60,23 +62,36 @@ document.addEventListener("DOMContentLoaded", () => {
         navMenu.classList.toggle("mobile-visible");
     });
 
-
-    document.addEventListener("DOMContentLoaded", () => {
-        const burgerMenu = document.getElementById("burgerMenu");
-        const navMenu = document.getElementById("navMenu");
-    
-        burgerMenu.addEventListener("click", () => {
-            burgerMenu.classList.toggle("active"); // Анимация бургер-меню
-            navMenu.classList.toggle("mobile-visible"); // Появление меню
-        });
-    });
-
     // Закрытие меню при клике вне его области
     document.addEventListener("click", (event) => {
         if (!navMenu.contains(event.target) && !burgerMenu.contains(event.target)) {
             navMenu.classList.remove("mobile-visible");
         }
     });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const burgerMenu = document.getElementById("burgerMenu");
+    const navMenu = document.getElementById("navMenu");
+
+    // Показ меню при наведении на бургер
+    burgerMenu.addEventListener("mouseenter", () => {
+        navMenu.style.display = "flex";
+        navMenu.style.opacity = "1";
+        navMenu.style.transform = "translateY(0)";
+    });
+
+    // Скрытие меню при убирании мыши с бургер-меню и навигации
+    burgerMenu.addEventListener("mouseleave", () => {
+        setTimeout(() => {
+            if (!navMenu.matches(":hover")) {
+                navMenu.style.display = "none";
+                navMenu.style.opacity = "0";
+                navMenu.style.transform = "translateY(-20px)";
+            }
+        }, 300); // Небольшая задержка для предотвращения мерцания
+    });
+
 });
 
 // Получаем элементы
