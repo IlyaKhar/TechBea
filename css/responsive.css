@@ -512,7 +512,7 @@
 }
 
 .burger-menu.active span:nth-child(2) {
-    opacity: 0; /* Прячем среднюю линию */
+    opacity: 1; /* Прячем среднюю линию */
 }
 
 .burger-menu.active span:nth-child(3) {
