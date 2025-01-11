@@ -16,6 +16,7 @@
     background-color: white;
     border-radius: 2px;
     transition: all 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Для активации бургер-меню */
@@ -25,8 +26,9 @@
 
 /* Скрытие меню по умолчанию */
 .nav-menu {
-    display: none;
-
+    display: flex;
+    gap: 15px;
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Анимация */
 }
 
 .nav-menu.mobile-hidden {
@@ -63,7 +65,6 @@
     border-color: #333;
     z-index: 1000; /* Поверх других элементов */
     gap: 15px; /* Расстояние между пунктами меню */
-    opacity: 1; /* Полностью видимое */
 }
 
 /* Настройка ссылок внутри меню */
@@ -446,23 +447,11 @@
         z-index: 10;
     }
 
-    /* По умолчанию меню скрыто 
-.dropdown-menu {
-    display: none;
-    opacity: 0; /* Начальная прозрачность */
-
-    /*    transform: translateY(-10px); /* Смещение вверх */
-
-    /*    transition: opacity 0.3s ease, transform 0.3s ease; /* Анимация появления */
-/* } */
-
-
-    /* Показываем меню при наведении */
-.dropdown:hover .dropdown-menu {
-    display: block;
-    opacity: 1; /* Полностью видимое */
-    transform: translateY(0); /* Сбрасываем смещение */
-}
+    .dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1; /* Полностью видимое */
+        transform: translateY(0); /* Сбрасываем смещение */
+    }
 
     .dropdown-menu a {
         display: block;
@@ -491,17 +480,35 @@
     box-sizing: border-box; /* Учитываем отступы в ширине */
 }
 
-/* Цвет текста в пункте "Администрация" при наведении */
+/* Стили для пунктов меню в бургер-меню */
+.nav-menu .dropdown-menu a {
+
+    font-size: 1rem; /* Размер текста */
+    text-decoration: none; /* Убираем подчеркивание */
+    padding: 10px; /* Отступы внутри пунктов */
+    display: block; /* Пункты в колонку */
+    transition: color 0.3s ease, background 0.3s ease; /* Плавный переход */
+    color: #575757; /* Цвет текста */
+}
+
+/* При наведении на пункт меню */
 .nav-menu .dropdown-menu a:hover {
-    color: #ff7e5f; /* Новый цвет текста при наведении */
-    background-color: rgba(255, 255, 255, 0.1); /* Фон при наведении */
-    transition: all 0.3s ease; /* Плавный переход цвета */
+    color: #ff7e5f; /* Новый цвет текста */
+    background-color: rgba(255, 255, 255, 0.1); /* Лёгкий светлый фон */
+    border-radius: 5px; /* Скругление фона */
+}
+
+/* Фон для выпадающего меню */
+.nav-menu .dropdown-menu {
+    background-color: hsla(0, 0%, 100%, 0.797); /* Фон меню  ВАЖНО МЕНЯЕТСЯ И В ХЕАДЕР*/ 
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 8px; /* Скруглённые углы */
 }
 
 /* Анимация при активации */
 .burger-menu.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px); /* Верхняя линия становится наклонной */
-    background-color: #ff7e5f; /* Меняем цвет */
+    background-color: hsl(12, 100%, 69%); /* Меняем цвет */
 }
 
 .burger-menu.active span:nth-child(2) {
