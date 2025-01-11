@@ -482,40 +482,5 @@
 
 /* Стили для пунктов меню в бургер-меню */
 .nav-menu .dropdown-menu a {
-
-    font-size: 1rem; /* Размер текста */
-    text-decoration: none; /* Убираем подчеркивание */
-    padding: 10px; /* Отступы внутри пунктов */
-    display: block; /* Пункты в колонку */
-    transition: color 0.3s ease, background 0.3s ease; /* Плавный переход */
     color: #575757; /* Цвет текста */
-}
-
-/* При наведении на пункт меню */
-.nav-menu .dropdown-menu a:hover {
-    color: #ff7e5f; /* Новый цвет текста */
-    background-color: rgba(255, 255, 255, 0.1); /* Лёгкий светлый фон */
-    border-radius: 5px; /* Скругление фона */
-}
-
-/* Фон для выпадающего меню */
-.nav-menu .dropdown-menu {
-    background-color: hsla(0, 0%, 100%, 0.797); /* Фон меню  ВАЖНО МЕНЯЕТСЯ И В ХЕАДЕР*/ 
-    padding: 10px; /* Внутренние отступы */
-    border-radius: 8px; /* Скруглённые углы */
-}
-
-/* Анимация при активации */
-.burger-menu.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px); /* Верхняя линия становится наклонной */
-    background-color: hsl(12, 100%, 69%); /* Меняем цвет */
-}
-
-.burger-menu.active span:nth-child(2) {
-    opacity: 1; /* Прячем среднюю линию */
-}
-
-.burger-menu.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px); /* Нижняя линия становится наклонной */
-    background-color: #ff7e5f; /* Меняем цвет */
 }
