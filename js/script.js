@@ -70,8 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
-
 // Получаем элементы
 const openLoginBtn = document.getElementById("openLogin");
 const openRegisterBtn = document.getElementById("openRegister");
