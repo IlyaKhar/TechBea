@@ -203,9 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             body: JSON.stringify(data),
         })
-        .then(response => response.json())
-        .then(data => console.log("Success:", data))
-        .catch(error => console.error("Error:", error));
+            .then(response => response.json())
+            .then(data => console.log("Success:", data))
+            .catch(error => console.error("Error:", error));
     };
 
     // Handle form submission
@@ -226,56 +226,56 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-    // Add responsiveness
-    window.addEventListener("resize", () => {
-        const width = window.innerWidth;
-        const forms = document.querySelectorAll(".form");
+// Add responsiveness
+window.addEventListener("resize", () => {
+    const width = window.innerWidth;
+    const forms = document.querySelectorAll(".form");
 
-        forms.forEach(form => {
-            if (width < 768) {
-                form.style.width = "90%";
-            } else {
-                form.style.width = "300px";
-            }
-        });
+    forms.forEach(form => {
+        if (width < 768) {
+            form.style.width = "90%";
+        } else {
+            form.style.width = "300px";
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Кнопки для открытия окон
+    const openLoginButton = document.getElementById("openLogin");
+    const openRegisterButton = document.getElementById("openRegister");
+
+    // Модальные окна
+    const loginModal = document.getElementById("loginModal");
+    const registerModal = document.getElementById("registerModal");
+
+    // Кнопки закрытия окон
+    const closeLoginButton = document.querySelector("#loginModal .close-btn");
+    const closeRegisterButton = document.querySelector("#registerModal .close-btn");
+
+    // Открытие окна входа
+    openLoginButton.addEventListener("click", () => {
+        loginModal.classList.remove("hidden");
     });
 
-    document.addEventListener("DOMContentLoaded", () => {
-        // Кнопки для открытия окон
-        const openLoginButton = document.getElementById("openLogin");
-        const openRegisterButton = document.getElementById("openRegister");
-
-        // Модальные окна
-        const loginModal = document.getElementById("loginModal");
-        const registerModal = document.getElementById("registerModal");
-
-        // Кнопки закрытия окон
-        const closeLoginButton = document.querySelector("#loginModal .close-btn");
-        const closeRegisterButton = document.querySelector("#registerModal .close-btn");
-
-        // Открытие окна входа
-        openLoginButton.addEventListener("click", () => {
-            loginModal.classList.remove("hidden");
-        });
-
-        // Открытие окна регистрации
-        openRegisterButton.addEventListener("click", () => {
-            registerModal.classList.remove("hidden");
-        });
-
-        // Закрытие окна входа
-        closeLoginButton.addEventListener("click", () => {
-            loginModal.classList.add("hidden");
-        });
-
-        document.addEventListener
-        closeRegisterButton.addEventListener("click", () => {
-            registerModal.classList.add("hidden");
-        });
+    // Открытие окна регистрации
+    openRegisterButton.addEventListener("click", () => {
+        registerModal.classList.remove("hidden");
     });
 
-        // Анимации для секций
-        // Общий код для анимаций секций
+    // Закрытие окна входа
+    closeLoginButton.addEventListener("click", () => {
+        loginModal.classList.add("hidden");
+    });
+
+    document.addEventListener
+    closeRegisterButton.addEventListener("click", () => {
+        registerModal.classList.add("hidden");
+    });
+});
+
+// Анимации для секций
+// Общий код для анимаций секций
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
 
@@ -289,6 +289,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.2 });
 
     sections.forEach(section => observer.observe(section));
+});
+
+
+
+
+// Анимация для бокового меню
+document.querySelectorAll('.menu-item').forEach(item => {
+    item.addEventListener('click', () => {
+        document.querySelectorAll('.menu-item').forEach(el => el.classList.remove('active'));
+        item.classList.add('active');
+    });
+});
+
+const toggleMenu = document.querySelector(".toggle-menu");
+const sidebar = document.querySelector(".sidebar");
+
+toggleMenu.addEventListener("click", () => {
+sidebar.classList.toggle("expanded");
 });
 
 // Анимация для секции 1 (TechBear — №1 по популярности)
