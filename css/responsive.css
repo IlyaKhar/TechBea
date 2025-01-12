@@ -2,7 +2,8 @@
 
 /* Стили бургер-меню */
 .burger-menu {
-    display: none; /* Скрыто на больших экранах */
+    display: none;
+    /* Скрыто на больших экранах */
     flex-direction: column;
     gap: 4px;
     cursor: pointer;
@@ -20,7 +21,7 @@
 }
 
 /* Для активации бургер-меню */
-.burger-menu.active + .nav-menu {
+.burger-menu.active+.nav-menu {
     display: flex;
 }
 
@@ -28,7 +29,8 @@
 .nav-menu {
     display: flex;
     gap: 15px;
-    transition: opacity 0.3s ease, transform 0.3s ease; /* Анимация */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* Анимация */
 }
 
 .nav-menu.mobile-hidden {
@@ -50,33 +52,50 @@
 
 /* Появление меню */
 .nav-menu.mobile-visible {
-    display: flex; /* Показываем меню */
-    flex-direction: column; /* Элементы меню в колонку */
-    justify-content: center; /* Центровка по вертикали */
-    align-items: center; /* Центровка по горизонтали */
-    position: fixed; /* Фиксированное позиционирование */
-    top: 25%; /* Середина экрана */
-    left: 50%; /* Середина экрана */
-    transform: translate(-50%, -50%); /* Сдвиг в центр */
-    background: linear-gradient(90deg, #ff7e5f, #feb47b); /* Полупрозрачный тёмный фон */
-    color: white;; /* Цвет текста */
+    display: flex;
+    /* Показываем меню */
+    flex-direction: column;
+    /* Элементы меню в колонку */
+    justify-content: center;
+    /* Центровка по вертикали */
+    align-items: center;
+    /* Центровка по горизонтали */
+    position: fixed;
+    /* Фиксированное позиционирование */
+    top: 25%;
+    /* Середина экрана */
+    left: 50%;
+    /* Середина экрана */
+    transform: translate(-50%, -50%);
+    /* Сдвиг в центр */
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    /* Полупрозрачный тёмный фон */
+    color: white;
+    ;
+    /* Цвет текста */
     padding: 20px;
-    border-radius: 10px; /* Скруглённые углы */
+    border-radius: 10px;
+    /* Скруглённые углы */
     border-color: #333;
-    z-index: 1000; /* Поверх других элементов */
-    gap: 15px; /* Расстояние между пунктами меню */
+    z-index: 1000;
+    /* Поверх других элементов */
+    gap: 15px;
+    /* Расстояние между пунктами меню */
 }
 
 /* Настройка ссылок внутри меню */
 .nav-menu.mobile-visible a {
-    color: white; /* Белый текст */
-    text-decoration: none; /* Убираем подчеркивание */
+    color: white;
+    /* Белый текст */
+    text-decoration: none;
+    /* Убираем подчеркивание */
     padding: 5px;
     transition: all 0.3s ease;
 }
 
 .nav-menu.mobile-visible a:hover {
-    color: white; /* Цвет текста при наведении */
+    color: white;
+    /* Цвет текста при наведении */
 }
 
 /* Показываем бургер-меню на маленьких экранах */
@@ -86,7 +105,8 @@
     }
 
     .nav-menu {
-        display: none; /* Прячем обычное меню */
+        display: none;
+        /* Прячем обычное меню */
     }
 }
 
@@ -123,7 +143,29 @@
         font-size: 0.8rem;
         padding: 6px 2px;
     }
+
+    .sidebar {
+        width: 50px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 5px;
+    }
+    
+    .menu-content .icon {
+        font-size: 14px;
+    }
 }
+
+
+
 
 /* --- Адаптация для 992px --- */
 @media (max-width: 992px) {
@@ -167,24 +209,51 @@
         padding: 6px 2px;
     }
 
-        .container {
-        gap: 5px; /* Уменьшаем расстояние между кнопками */
+    .container {
+        gap: 5px;
+        /* Уменьшаем расстояние между кнопками */
     }
 
     .nav-menu {
-        flex-wrap: wrap; /* Разрешаем перенос пунктов меню */
-        justify-content: center; /* Центровка меню */
-        gap: 5px; /* Расстояние между пунктами */
-        position: static; /* Убираем абсолютное позиционирование */
-        transform: none; /* Сбрасываем смещение */
-        display: none; /* Скрываем центральное меню */
+        flex-wrap: wrap;
+        /* Разрешаем перенос пунктов меню */
+        justify-content: center;
+        /* Центровка меню */
+        gap: 5px;
+        /* Расстояние между пунктами */
+        position: static;
+        /* Убираем абсолютное позиционирование */
+        transform: none;
+        /* Сбрасываем смещение */
+        display: none;
+        /* Скрываем центральное меню */
     }
 
     .burger-menu {
-        display: flex; /* Показываем бургер-меню */
-        margin-left: auto; /* Двигаем бургер к правому краю */
+        display: flex;
+        /* Показываем бургер-меню */
+        margin-left: auto;
+        /* Двигаем бургер к правому краю */
     }
 
+    .sidebar {
+        width: 35px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 5px;
+    }
+    
+    .menu-content .icon {
+        font-size: 14px;
+    }
 }
 
 
@@ -244,7 +313,27 @@
     }
 
     .burger-menu {
-        margin-left: auto; /* Двигаем бургер к правому краю */
+        margin-left: auto;
+        /* Двигаем бургер к правому краю */
+    }
+
+    .sidebar {
+        width: 25px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 5px;
+    }
+    
+    .menu-content .icon {
+        font-size: 14px;
     }
 }
 
@@ -288,18 +377,40 @@
     .logo {
         font-size: 0.8rem;
     }
+    
+    .sidebar {
+        width: 20px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 10px;
+    }
+    
+    .menu-content .icon {
+        font-size: 14px;
+    }
 }
 
 
 /* --- Адаптация для 380px --- */
 @media (max-width: 380px) {
     .container1 {
-        padding: 0 10px; /* Уменьшаем боковые отступы */
+        padding: 0 10px;
+        /* Уменьшаем боковые отступы */
     }
 
     .header-container {
-        flex-wrap: wrap; /* Разрешаем перенос элементов */
-        justify-content: space-between; /* Логотип слева, меню справа */
+        flex-wrap: wrap;
+        /* Разрешаем перенос элементов */
+        justify-content: space-between;
+        /* Логотип слева, меню справа */
     }
 
     .btn {
@@ -308,77 +419,122 @@
     }
 
     .logo {
-        font-size: 0.8rem; /* Уменьшаем размер логотипа */
+        font-size: 0.8rem;
+        /* Уменьшаем размер логотипа */
     }
 
     .nav-menu a {
-        font-size: 0.8rem; /* Уменьшаем пункты меню */
-        padding: 8px; /* Уменьшаем внутренние отступы */
+        font-size: 0.8rem;
+        /* Уменьшаем пункты меню */
+        padding: 8px;
+        /* Уменьшаем внутренние отступы */
     }
 
     .burger-menu {
-        margin-left: auto; /* Двигаем бургер к правому краю */
+        margin-left: auto;
+        /* Двигаем бургер к правому краю */
     }
 
     .nav-menu.mobile-visible {
-        right: 0; /* Убедитесь, что меню не выходит за правый край */
+        right: 0;
+        /* Убедитесь, что меню не выходит за правый край */
         left: auto;
     }
 
-    .section, .container1 {
-        padding: 10px; /* Уменьшаем отступы */
+    .section,
+    .container1 {
+        padding: 10px;
+        /* Уменьшаем отступы */
     }
 
     img {
-        max-width: 100%; /* Делаем изображение адаптивным */
+        max-width: 100%;
+        /* Делаем изображение адаптивным */
         height: auto;
     }
 
     .highlight-section {
-        flex-direction: column; /* Ставим элементы в колонку */
+        flex-direction: column;
+        /* Ставим элементы в колонку */
         text-align: center;
     }
 
     .highlight-section img {
-        width: 100%; /* Заполняет ширину экрана */
+        width: 100%;
+        /* Заполняет ширину экрана */
     }
 
     .highlight-text h1 {
-        font-size: 1rem; /* Уменьшаем текст */
+        font-size: 1rem;
+        /* Уменьшаем текст */
     }
 
     .benefits-container {
-        flex-direction: column; /* Ставим элементы в колонку */
-        text-align: center; /* Центровка текста */
+        flex-direction: column;
+        /* Ставим элементы в колонку */
+        text-align: center;
+        /* Центровка текста */
     }
 
     .benefits-text h2 {
-        font-size: 1rem; /* Уменьшаем текст */
+        font-size: 1rem;
+        /* Уменьшаем текст */
     }
 
     .info-box {
-        padding: 10px; /* Уменьшаем внутренние отступы */
+        padding: 10px;
+        /* Уменьшаем внутренние отступы */
     }
 
     .results-content {
-        flex-direction: column; /* Элементы в колонку */
-        align-items: center; /* Центровка */
+        flex-direction: column;
+        /* Элементы в колонку */
+        align-items: center;
+        /* Центровка */
     }
 
     .chart-label {
-        font-size: 0.8rem; /* Уменьшаем текст в графиках */
+        font-size: 0.8rem;
+        /* Уменьшаем текст в графиках */
     }
 
-    .section, .highlight-section, .benefits-container, .results-content{
-        padding: 0 10px; /* Уменьшаем боковые отступы */
+    .section,
+    .highlight-section,
+    .benefits-container,
+    .results-content {
+        padding: 0 10px;
+        /* Уменьшаем боковые отступы */
     }
 
-    h1, h2, h3 {
-        font-size: 1rem; /* Уменьшаем заголовки */
+    h1,
+    h2,
+    h3 {
+        font-size: 1rem;
+        /* Уменьшаем заголовки */
     }
 
     p {
-        font-size: 0.9rem; /* Уменьшаем текст */
+        font-size: 0.9rem;
+        /* Уменьшаем текст */
+    }
+
+    .sidebar {
+        width: 20px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 10px;
+    }
+    
+    .menu-content .icon {
+        font-size: 12px;
     }
 }
 
@@ -416,6 +572,24 @@
         font-size: 0.7rem;
     }
 
+    .sidebar {
+        width: 20px;
+     /* Прячем меню */
+    }
+    
+    .sidebar.expanded {
+        transform: translateX(0); /* Показываем меню при раскрытии */
+    }
+    
+    
+    .menu-content .tooltip {
+        display: block;
+        margin-left: 10px;
+    }
+    
+    .menu-content .icon {
+        font-size: 10px;
+    }
 }
 
 /* --- Адаптация header для экранов больше 768px --- */
@@ -431,58 +605,67 @@
 }
 
 
-    /* Dropdown меню */
-    .dropdown {
-        position: relative;
-    }
+/* Dropdown меню */
+.dropdown {
+    position: relative;
+}
 
-    .dropdown-menu {
-        position: absolute;
-        display: none;
-        top: 100%;
-        left: 0;
-        background: white;
-        color: #333;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 5px;
-        padding: 10px 0;
-        z-index: 10;
-    }
+.dropdown-menu {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    background: white;
+    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 10px 0;
+    z-index: 10;
+}
 
-    .dropdown:hover .dropdown-menu {
-        display: block;
-        opacity: 1; /* Полностью видимое */
-        transform: translateY(0); /* Сбрасываем смещение */
-    }
+.dropdown:hover .dropdown-menu {
+    display: block;
+    opacity: 1;
+    /* Полностью видимое */
+    transform: translateY(0);
+    /* Сбрасываем смещение */
+}
 
-    .dropdown-menu a {
-        display: block;
-        padding: 8px 15px;
-        font-size: 0.9rem;
-        color: #333;
-        text-decoration: none;
-        transition: background 0.3s ease;
-    }
+.dropdown-menu a {
+    display: block;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
 
-    .dropdown-menu a:hover {
-        background: #ff7e5f;
-        color: white;
-    }
+.dropdown-menu a:hover {
+    background: #f1f1f183;
+    color: white;
+}
 
-    /* Кнопки входа и регистрации */
-    .container {
-        display: flex;
-        gap: 5px;
-        justify-content: flex-end;
-    }
+/* Кнопки входа и регистрации */
+.container {
+    display: flex;
+    gap: 5px;
+    justify-content: flex-end;
+}
 
-.section, .highlight-section, .benefits-container, .results-content {
-    max-width: 100%; /* Ограничиваем ширину секций */
-    overflow: hidden; /* Прячем элементы, выходящие за пределы */
-    box-sizing: border-box; /* Учитываем отступы в ширине */
+.section,
+.highlight-section,
+.benefits-container,
+.results-content {
+    max-width: 100%;
+    /* Ограничиваем ширину секций */
+    overflow: hidden;
+    /* Прячем элементы, выходящие за пределы */
+    box-sizing: border-box;
+    /* Учитываем отступы в ширине */
 }
 
 /* Стили для пунктов меню в бургер-меню */
 .nav-menu .dropdown-menu a {
-    color: #575757; /* Цвет текста */
+    color: #575757;
+    /* Цвет текста */
 }

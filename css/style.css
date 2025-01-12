@@ -132,6 +132,118 @@ nav a:hover {
   background: rgba(255, 255, 255, 0.8);
 }
 
+
+/* Стили для бокового меню */
+
+.sidebar {
+  position: fixed;
+  top: 20%; /* Отступ для меню ниже header */
+  left: 0;
+  width: 50px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ccc;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  z-index: 999; /* Чуть ниже шапки */
+}
+
+.menu-item {
+  position: relative;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.tooltip {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.menu-item:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.dropdown-item {
+  padding: 5px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+  position: absolute;
+  left: 60px;
+  top: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  padding: 10px 0;
+}
+
+.dropdown-item {
+  padding: 5px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: flex;
+}
+
 .popup {
   display: none;
   position: fixed;
@@ -242,7 +354,7 @@ nav a:hover {
 
 .modal input:focus {
   border-color: #007bff;
-  box-shadow: 0 0 4px #007bff;
+  box-shadow: 0 0 4px #feb47b;
 }
 
 .modal button {
@@ -250,14 +362,14 @@ nav a:hover {
   font-size: 1rem;
   border: none;
   border-radius: 5px;
-  background-color: #007bff;
+  background-color: #feb47b;
   color: #fff;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .modal button:hover {
-  background-color: #0056b3;
+  background-color: #feb47b;
 }
 
 /* Кнопка закрытия */
@@ -273,7 +385,7 @@ nav a:hover {
 }
 
 .close-btn:hover {
-  color: #007bff;
+  color: #feb47b;
 }
 
 /* Отображение модального окна */
@@ -328,7 +440,7 @@ nav a:hover {
   text-align: center;
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #007BFF; /* Акцентный синий */
+  color: #feb47b; /* Акцентный оранжевый */
 }
 
 .section p {
@@ -361,7 +473,7 @@ nav a:hover {
   margin: 10px 0;
 }
 .highlight-text a {
-  color: #007BFF;
+  color: #feb47b;;
   text-decoration: none;
 }
 .highlight-text a:hover {
@@ -391,7 +503,7 @@ nav a:hover {
   max-width: 50%;
 }
 .benefits-text h2 {
-  color: #6937a9;
+  color: #feb47b;
   margin-bottom: 20px;
 }
 .benefits-text ul {
@@ -404,7 +516,7 @@ nav a:hover {
 }
 .benefits-text li::before {
   content: "✔️";
-  color: #6937a9;
+  color: #feb47b;
   margin-right: 10px;
 }
 .benefits-right {
@@ -444,7 +556,7 @@ nav a:hover {
   max-width: 50%;
 }
 .documents-text h2 {
-  color: #6937a9;
+  color: #feb47b;
   margin-bottom: 20px;
 }
 .documents-text ul {
@@ -458,7 +570,7 @@ nav a:hover {
 }
 .documents-text li::before {
   content: "✔️";
-  color: #6937a9;
+  color: #feb47b;
   margin-right: 10px;
 }
 .btn-green {
@@ -595,7 +707,7 @@ nav a:hover {
 }
 
 .reviews-slider .dot.active {
-  background: #007BFF;
+  background: #feb47b;
 }
 
 /* Основная страница пункт 5  */
@@ -700,7 +812,7 @@ nav a:hover {
 }
 
 .footer-menu li a:hover {
-  color: #007bff; /* Синий текст при наведении */
+  color: #feb47b; /* Желтый текст при наведении */
 }
 
 /* Социальные иконки */
@@ -718,7 +830,7 @@ nav a:hover {
 
 .social-icon:hover {
   transform: scale(1.2); /* Увеличение при наведении */
-  color: #007bff; /* Синий цвет при наведении */
+  color: #feb47b; /* Желтый цвет при наведении */
 }
 
 /* Нижняя часть футера */
@@ -758,7 +870,7 @@ nav a:hover {
   cursor: pointer;
 }
 .dot.active {
-  background: #007BFF;
+  background: #feb47b;
 }
 
 
