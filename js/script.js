@@ -291,8 +291,11 @@ document.addEventListener('DOMContentLoaded', () => {
     sections.forEach(section => observer.observe(section));
 });
 
-
-
+// Анимации для планок
+// Общий код для анимаций перехода
+function navigateTo(url) {
+    window.location.href = url;
+}
 
 // Анимация для бокового меню
 document.querySelectorAll('.menu-item').forEach(item => {
