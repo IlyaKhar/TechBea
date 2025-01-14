@@ -110,6 +110,7 @@
     }
 }
 
+
 /* --- Основная страница: Общие стили --- */
 .section {
     padding: 40px;
@@ -161,6 +162,22 @@
     
     .menu-content .icon {
         font-size: 14px;
+    }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.9rem;
+        max-width: 500px;
     }
 }
 
@@ -254,6 +271,22 @@
     .menu-content .icon {
         font-size: 14px;
     }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
 }
 
 
@@ -335,6 +368,22 @@
     .menu-content .icon {
         font-size: 14px;
     }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
 }
 
 /* --- Адаптация для 480px --- */
@@ -395,6 +444,22 @@
     
     .menu-content .icon {
         font-size: 14px;
+    }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.8rem;
+        max-width: 500px;
     }
 }
 
@@ -536,6 +601,22 @@
     .menu-content .icon {
         font-size: 12px;
     }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
 }
 
 
@@ -589,6 +670,22 @@
     
     .menu-content .icon {
         font-size: 10px;
+    }
+
+    .container2 {
+        padding: 15px;
+        font-size: 0.8rem;
+        max-width: 500px;
+    }
+
+    
+    .card {
+        padding: 5px;
+    }
+
+    p{
+        font-size: 0.8rem;
+        max-width: 500px;
     }
 }
 
@@ -669,3 +766,5 @@
     color: #575757;
     /* Цвет текста */
 }
+
+
