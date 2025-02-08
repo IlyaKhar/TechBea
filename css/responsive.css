@@ -1,6 +1,5 @@
 /* Responsive.css */
 
-/* Стили бургер-меню */
 .burger-menu {
     display: none;
     /* Скрыто на больших экранах */
@@ -287,6 +286,15 @@
         font-size: 0.8rem;
         max-width: 500px;
     }
+
+    .hero::before{
+        width: 80%;
+        height: 65%;
+    }
+
+    .hero-content{
+        max-width: 600px;
+    }
 }
 
 
@@ -384,6 +392,15 @@
         font-size: 0.8rem;
         max-width: 500px;
     }
+
+    .hero::before{
+        width: 90%;
+        height: 65%;
+    }
+
+    .news {
+        width: 90%; /* На мобильных делаем шире */
+    }
 }
 
 /* --- Адаптация для 480px --- */
@@ -460,6 +477,15 @@
     p{
         font-size: 0.8rem;
         max-width: 500px;
+    }
+
+    .hero::before{
+        width: 90%;
+        height: 65%;
+    }
+
+    .hero-content{
+        max-width: 300px;
     }
 }
 
@@ -617,6 +643,15 @@
         font-size: 0.8rem;
         max-width: 500px;
     }
+
+    .hero::before{
+        width: 90%;
+        height: 65%;
+    }
+
+    .hero-content{
+        max-width: 200px;
+    }
 }
 
 
@@ -766,5 +801,3 @@
     color: #575757;
     /* Цвет текста */
 }
-
-
