@@ -319,4 +319,3 @@ initAdvantagesSection();
 initCertificatesSlider();
 initResultsSection();
 initReviewsSlider();
-

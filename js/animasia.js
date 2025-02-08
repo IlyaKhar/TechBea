@@ -85,3 +85,23 @@ function initReviewsSlider() {
 
     updateSlider();
 }
+
+// Анимации для Новосте об образовании 
+
+document.addEventListener("DOMContentLoaded", function () {
+    const elements = document.querySelectorAll(".fade-in");
+
+    function checkScroll() {
+        const triggerBottom = window.innerHeight * 0.85;
+
+        elements.forEach((element) => {
+            const boxTop = element.getBoundingClientRect().top;
+            if (boxTop < triggerBottom) {
+                element.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Запуск при загрузке страницы
+});
