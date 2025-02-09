@@ -544,6 +544,7 @@ p {
   padding: 20px; /* Отступы сверху и по бокам */
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+
 }
 
 .footer .container {
@@ -559,7 +560,7 @@ p {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 1px;
 }
 
 .footer-logo img {
@@ -569,11 +570,12 @@ p {
 
 .footer-menu {
   list-style: none; /* Убираем маркеры списка */
-  padding: 0;
+  padding: 20px;
   margin: 0 auto;
   display: flex;
   gap: 5px; /* Промежуток между пунктами */
   flex-wrap: wrap; /* Перенос пунктов меню на новую строку */
+  
 }
 
 .footer-menu li a {
@@ -612,7 +614,7 @@ p {
 }
 
 .footer-bottom p {
-  margin: 5px 0; /* Небольшие отступы между строками */
+  margin: 2px 0; /* Небольшие отступы между строками */
 }
 
 /* анимации для секций */
@@ -813,7 +815,7 @@ color: #000;
 }
 
 
-/* css для Новостей об образовании*/
+/* css для Новостей (об образовании, политика, о нас)*/
 
 /* Анимация появления */
 .fade-in {
@@ -923,4 +925,64 @@ color: #000;
 
 .related-news a:hover::after {
   width: 100%;
+}
+
+
+
+
+
+
+/* Контейнер новостей */
+.news-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px; /* Ограничиваем максимальную ширину контейнера */
+  margin: 0 auto; /* Центрируем контейнер */
+  padding-bottom: 50px;
+}
+
+/* Карточки новостей */
+.news-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 45%;
+  max-width: 400px;
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.news-card:hover {
+  transform: scale(1.05);
+}
+
+/* Анимация появления */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* Адаптивность */
+/* Равномерное распределение в строках */
+@media (max-width: 1024px) {
+  .news-card {
+      width: 48%; /* Чуть шире на планшетах */
+  }
+}
+
+@media (max-width: 768px) {
+  .news-card {
+      width: 90%; /* В одну колонку на мобильных */
+  }
 }
